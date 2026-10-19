@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Névoa Store</title>
+  <meta name="description" content="Névoa Store – loja de cigarros eletrónicos e acessórios. Venda exclusiva a maiores de 18 anos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- VERIFICAÇÃO DE IDADE -->
+  <div class="idade" id="idade">
+    <div class="idade-caixa">
+      <h2>Tens 18 anos ou mais?</h2>
+      <p>Este site vende produtos com nicotina e é apenas para maiores de idade.</p>
+      <div class="botoes">
+        <button class="btn" onclick="confirmarIdade(true)">Sim, tenho 18+</button>
+        <button class="btn btn-sec" onclick="confirmarIdade(false)">Não</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CABEÇALHO + MENU -->
+  <header class="cabecalho">
+    <a href="#inicio" class="logo">Névoa Store</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="menu" class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#informacao">Informação</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="btn-modo" id="btnModo" onclick="modoEscuro()">🌙 Modo escuro</button>
+  </header>
+
+  <main id="conteudo">
+    <!-- APRESENTAÇÃO -->
+    <section id="inicio" class="hero">
+      <div class="hero-texto">
+        <h1>Dispositivos e acessórios, com aconselhamento sério.</h1>
+        <p>Loja local para adultos: explicamos como cada produto funciona, em que consiste cada teor de nicotina e como usá-lo em segurança. Venda exclusiva a maiores de 18 anos.</p>
+        <div class="botoes">
+          <a class="btn" href="#produtos">Ver produtos</a>
+          <button class="btn btn-sec" onclick="mostrarMensagem()">Dizer olá</button>
+          <button class="btn btn-sec" onclick="mudarCor()">🎨 Mudar cor de fundo</button>
+        </div>
+      </div>
+      <img class="hero-img" src="imagens/hero.svg" alt="Ilustração de um dispositivo com névoa">
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="seccao">
+      <h2>Produtos</h2>
+      <div class="cartoes">
+        <article class="cartao" data-produto="pod" tabindex="0" role="button" aria-label="Ver detalhes: Dispositivos pod">
+          <h3>Dispositivos pod</h3>
+          <p>Compactos e simples de usar, indicados para quem está a começar.</p>
+          <span class="tag">Em stock</span> <span class="ver">Ver detalhes →</span>
+        </article>
+        <article class="cartao" data-produto="kit" tabindex="0" role="button" aria-label="Ver detalhes: Kits completos">
+          <h3>Kits completos</h3>
+          <p>Dispositivo, carregador e manual em português, tudo no mesmo pack.</p>
+          <span class="tag">Em stock</span> <span class="ver">Ver detalhes →</span>
+        </article>
+        <article class="cartao" data-produto="liquidos" tabindex="0" role="button" aria-label="Ver detalhes: Líquidos">
+          <h3>Líquidos</h3>
+          <p>Vários teores de nicotina, incluindo opção sem nicotina. Rótulos conformes com a lei.</p>
+          <span class="tag">Em stock</span> <span class="ver">Ver detalhes →</span>
+        </article>
+        <article class="cartao" data-produto="acessorios" tabindex="0" role="button" aria-label="Ver detalhes: Acessórios">
+          <h3>Acessórios</h3>
+          <p>Resistências, baterias e carregadores para manter o equipamento em bom estado.</p>
+          <span class="tag">Sob encomenda</span> <span class="ver">Ver detalhes →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PORQUÊ A NÉVOA -->
+    <section class="seccao" id="porque">
+      <h2>Porquê a Névoa</h2>
+      <div class="destaques">
+        <div class="destaque"><span class="icone">💬</span><h3>Aconselhamento</h3><p>Explicamos cada produto e cada teor de nicotina, sem pressas.</p></div>
+        <div class="destaque"><span class="icone">✅</span><h3>Produtos conformes</h3><p>Só vendemos artigos com rótulo e notificação em ordem.</p></div>
+        <div class="destaque"><span class="icone">🔧</span><h3>Apoio pós-venda</h3><p>Ajudamos com baterias, resistências e avarias.</p></div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="seccao">
+      <h2>Galeria</h2>
+      <p class="intro">Clica numa imagem para a ver maior.</p>
+      <div class="galeria">
+        <img src="imagens/foto1.svg" alt="Dispositivo pod">
+        <img src="imagens/foto2.svg" alt="Kit completo na caixa">
+        <img src="imagens/foto3.svg" alt="Frasco de líquido de 3 mg">
+        <img src="imagens/foto4.svg" alt="Bateria e resistências">
+        <img src="imagens/foto5.svg" alt="Carregador e cabo">
+        <img src="imagens/foto6.svg" alt="Prateleiras da loja">
+      </div>
+    </section>
+
+    <!-- INFORMAÇÃO RESPONSÁVEL (substitui as frases motivacionais) -->
+    <section id="informacao" class="seccao frase-area">
+      <h2>Informação responsável</h2>
+      <blockquote id="frase">Clica no botão para ler uma dica.</blockquote>
+      <button class="btn" onclick="novaFrase()">Nova dica</button>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccao">
+      <h2>Contacto</h2>
+      <form id="formContacto" class="formulario" novalidate>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option>Dúvida sobre um produto</option>
+          <option>Encomenda</option>
+          <option>Apoio ao cliente</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreve aqui a tua mensagem"></textarea>
+
+        <label class="check"><input type="checkbox" id="maior" name="maior"> Confirmo que tenho 18 anos ou mais</label>
+
+        <button type="submit" class="btn">Enviar mensagem</button>
+        <p id="feedback" class="feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p class="aviso">Aviso: a nicotina é uma substância que causa dependência. Venda proibida a menores de 18 anos.</p>
+    <p>Névoa Store · Rua do Comércio, 25 · 4000-000 Porto</p>
+    <p id="contador">Visitas: 0</p>
+    <p>© 2026 Névoa Store. Projeto escolar fictício – MOD8.</p>
+  </footer>
+
+  <!-- JANELA DE DETALHES DO PRODUTO -->
+  <dialog id="modalProduto" class="modal" aria-labelledby="modalTitulo">
+    <button class="modal-fechar" id="modalFechar" aria-label="Fechar">✕</button>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-corpo">
+      <h3 id="modalTitulo"></h3>
+      <p id="modalDesc"></p>
+      <ul id="modalLista"></ul>
+      <p class="modal-aviso">Venda exclusiva a maiores de 18 anos. A nicotina causa dependência.</p>
+      <a class="btn" href="#contacto" id="modalContacto">Pedir informações</a>
+    </div>
+  </dialog>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <img id="lightboxImg" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
